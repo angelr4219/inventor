@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+:root{
+  color-scheme: dark;
+  font-size: 62.5%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1.6rem;
+  position: relative;
+}
+body{
+  min-height:50vw;
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds viewport height */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background:
+
+    center / cover no-repeat
+    url("/Pictures/New-old_board.png");
+}
+nav {
+    position: fixed;
+    left: 0; /* Initially, set the left edge outside the viewport */
+    top: 5rem;
+    display: grid;
+    grid-auto-flow: column;
+    width: max-content;
+    height: 5rem;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    backdrop-filter: blur(1rem);
+    animation: slideIn 0.5s forwards; /* Apply the animation */
+  }
+nav{
+  position: fixed;
+  left: 50%;
+  top: 5rem;
+  translate: -50% 0;
+  display: grid;
+  grid-auto-flow: column;
+  width: max-content;
+  height: 5rem;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  backdrop-filter: blur(1rem);
+  
+}
+nav > a,
+nav > .drop-down > a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: inherit;
+}
+nav > .drop-down{
+  display: grid;
+  grid-auto-flow: row;
+  gap: 0.5rem;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  transition: height 200ms ease;
+}
+nav > .drop-down:hover{
+  height: 10rem;
+}
+nav > .drop-down > a{
+  height: 5rem;
+}
+nav > .drop-down > a:nth-child(1n+2){
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  transition: background 200ms ease;
+}
+nav > .drop-down > a:nth-child(1n+2):hover{
+  background: rgba(0, 0, 0, 0.4);
+}
+nav > .logo{
+  width: 5rem;
+  scale: 2;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+nav > .button-background{
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  translate: -50% -50%;
+  width: 0rem;
+  height: 0rem;
+  border-radius: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  transition:
+    left 300ms ease,
+    top 300ms ease,
+    translate 300ms ease,
+    width 300ms ease,
+    height 300ms ease;
+  transition-delay: 100ms;
+  z-index: -1;
+}
+nav > a:hover ~ .button-background,
+nav > .drop-down:hover ~ .button-background{
+  width: 10rem;
+  height: 3rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+nav > a:nth-child(1):hover ~ .button-background{
+  left: calc((15rem - 10rem) / 2 + 0rem);
+}
+nav > a:nth-child(2):hover ~ .button-background{
+  left: calc((15rem - 10rem) / 2 + 15rem);
+}
+nav > a:nth-child(4):hover ~ .button-background{
+  left: calc((15rem - 10rem) / 2 + 35rem);
+}
+nav > .drop-down:nth-child(5):hover ~ .button-background{
+  left: calc((15rem - 10rem) / 2 + 50rem);
+}
+
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%); /* Start off the screen to the left */
+    }
+    to {
+      transform: translateX(0%); /* Slide into the middle */
+    }
+  }
+  
+
+
+  .img {
+    width: 60px; /* Adjust as needed */
+    height: 60 px; /* This will maintain the aspect ratio of the image */
+}

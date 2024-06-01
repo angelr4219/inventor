@@ -1,0 +1,12 @@
+/* styles.css */
+body{
+  min-height:50vw;
+  min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling when content exceeds viewport height */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background:
+  
+    center / cover no-repeat
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Royce_Hall%2C_vaulted_arches%2C_exterior%2C_UCLA.jpg/1200px-Royce_Hall%2C_vaulted_arches%2C_exterior%2C_UCLA.jpg");
+
+  }
